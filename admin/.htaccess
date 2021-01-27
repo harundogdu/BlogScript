@@ -1,0 +1,6 @@
+Options -indexes
+RewriteEngine On
+RewriteBase /PHP_BlogScript/admin/
+RewriteRule ^homepage.html index.php [L,QSA]
+RewriteRule ^(.*).html index.php?page=$1 [L,QSA]
+RewriteRule ^operation/(.*)/(.*) index.php?page=$1&id=$2 [L,QSA]

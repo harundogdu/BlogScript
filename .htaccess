@@ -1,0 +1,11 @@
+Options -indexes
+RewriteEngine On
+RewriteBase /PHP_BlogScript/
+RewriteCond %{REQUEST_FILENAME}% !-d
+RewriteCond %{REQUEST_FILENAME}%\.php !-f
+RewriteRule ^homepage.html index.php
+RewriteRule ^([0-9a-zA-Z-_]+).html$ index.php?page=$1
+RewriteRule ^sayfa/([0-9a-zA-Z-_]+)$ index.php?sayfa=$1 [NC,L,QSA]
+RewriteRule ^category/([0-9a-zA-Z-_]+)/([0-9a-zA-Z-_]+)$ index.php?page=category&categoryLink=$1&sayfa=$2
+RewriteRule ^([0-9a-zA-Z-_]+)/post/([0-9a-zA-Z-_]+)$ index.php?page=post&categoryName=$1&postTitle=$2
+RewriteRule ^data/([0-9a-zA-Z-_]+)/([0-9a-zA-Z-_]+)$ data/search.php?search=$1&sayfa=$2 [NC,L,QSA]
